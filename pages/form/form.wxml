@@ -1,0 +1,26 @@
+<!-- form.wxml -->
+<view class="container" wx:if="{{!submited}}">
+    <form bindsubmit="clickSubmitBtn" bindreset="formReset">
+        <view class='content'>
+            <text class='text'>Name*:</text>
+            <input class='input' name="name" />
+        </view>
+        <view class='content'>
+            <text>Mobile Number*:</text>
+            <input class='input' name="mobileNumber" type='number' maxlength='11' />
+        </view>
+        <view class='content'>
+            <text>Email*:</text>
+            <input class='input' name="email" />
+        </view>
+        <view class='content'>
+            <text>Birthdate:</text>
+            <picker mode="date" name="birthdate" start="1921-01-01" end="2018-05-01" bindchange="bindDateChange">
+                <input class='input date' value='{{birthdate}}' disabled='true' placeholder='Select a date' />
+            </picker>
+        </view>
+        <view class="btn">
+            <button class="submit-btn" formType="submit"> Commit </button>
+        </view>
+    </form>
+</view>

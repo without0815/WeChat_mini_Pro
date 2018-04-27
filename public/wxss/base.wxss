@@ -1,0 +1,11 @@
+/*!
+ *
+ *  DFS base.wxss | v0.0.1
+ *  Copyright 2018 ACN Inc. All rights reserved.
+ *  
+ *  @Author：weChat team @Date: 2018-4-27
+ *  
+ */
+view, sroll-view, swiper, icon, text, progress, button, checkbox, form, input, label, input, picker, radio, slider, switch, action-sheet, modal, toast, loading, navigator, audio, image, video, map, canvas { box-sizing: border-box; }
+page { height: 100%; font: 14px "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif; }
+.hide { display: none !important; }

@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/form/form",
+    "pages/randomCoupon/randomCoupon"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f4de3b",
+    "navigationBarTitleText": "weChat Demo",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

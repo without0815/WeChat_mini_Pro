@@ -1,0 +1,11 @@
+/*!
+ *
+ *  DFS form.wxss | v0.0.1
+ *  Copyright 2018 ACN Inc. All rights reserved.
+ *  
+ *  @Author：Yingmm @Date: 2018-4-27
+ *  
+ */
+ 
+.random-c {height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.random-c .code{font-size: 50rpx;color: brown;}
