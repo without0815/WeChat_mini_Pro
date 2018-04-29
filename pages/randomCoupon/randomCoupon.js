@@ -18,5 +18,11 @@ Page({
       console.error(e);
     }
 
+  },
+  cleanCache:()=>{
+    wx.removeStorageSync('code');
+    wx.redirectTo({
+      url: "../form/form?timestamp=" + new Date()
+    })
   }
 })

@@ -1,7 +1,11 @@
 <!-- form.wxml -->
 <view class="random-c">
-   <view> 
+    <view>
         Coupon Code:
-        <label class="code">{{randomStr}}</label>   
+        <label class="code">{{randomStr}}</label>
+    </view>
+
+    <view class="btn">
+        <button type="warn" bindtap="cleanCache">Clean cache</button>
     </view>
 </view>

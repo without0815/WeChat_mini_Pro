@@ -61,7 +61,29 @@ const req = (url, data, cb) => {
     })
 }
 
+/**
+ * 
+ * @param {*} str 
+ */
+function isEmail(str) {
+    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+    return reg.test(str);
+}
+
+/**
+ * 
+ * @param {*} str 
+ */
+function isPhone(str) {
+    var reg =  /^1[34578]\d{9}$/;
+    return reg.test(str);
+}
+
+
+
 module.exports = {
     randomStr: randomStr,
     req: req,
+    isEmail:isEmail,
+    isPhone:isPhone
 }

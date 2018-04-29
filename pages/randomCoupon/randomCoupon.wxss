@@ -9,3 +9,4 @@
  
 .random-c {height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .random-c .code{font-size: 50rpx;color: brown;}
+.random-c .btn{margin-top: 20rpx;}

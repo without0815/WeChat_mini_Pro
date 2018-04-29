@@ -9,7 +9,7 @@ Page({
   data: {
     code: wx.getStorageSync('code'),
     hasUserInfo: false,
-    submited: wx.getStorageSync('code') || false,
+    submited: wx.getStorageSync('code') ? true : false,
     birthdate: ''
   },
   onLoad: function () {
@@ -20,8 +20,13 @@ Page({
         code: value
       });
       wx.redirectTo({
-        url: "../randomCoupon/randomCoupon?id=" + new Date()
+        url: "../randomCoupon/randomCoupon?timestamp=" + new Date()
       })
+    } else {
+      this.setData({
+        submited: false,
+        code: value
+      });
     }
   },
   bindDateChange: function (el) {
@@ -39,7 +44,6 @@ Page({
       timestamp: new Date().getMilliseconds()
     };
 
-    var phoneReg = /^1[34578]\d{9}$/;
     if (formData.name == '') {
       wx.showModal({
         content: 'Please input your name',
@@ -49,7 +53,7 @@ Page({
     }
     if (formData.mobileNumber == '') {
       wx.showModal({
-        content: 'Please input your mobileNumber',
+        content: 'Please input your mobile number',
         showCancel: false
       })
       return false
@@ -62,9 +66,18 @@ Page({
       })
       return false
     }
-    if (!phoneReg.test(formData.mobileNumber)) {
+
+    if (!util.isPhone(formData.mobileNumber)) {
       wx.showModal({
         content: 'The phone number format error',
+        showCancel: false
+      })
+      return false
+    }
+
+    if (!util.isEmail(formData.email)) {
+      wx.showModal({
+        content: 'The email format error',
         showCancel: false
       })
       return false
@@ -77,7 +90,7 @@ Page({
       success: (res) => {
         if (res.confirm) {
           wx.redirectTo({
-            url: "../randomCoupon/randomCoupon?id=" + new Date()
+            url: "../randomCoupon/randomCoupon?timestamp=" + new Date()
           })
         }
       }
